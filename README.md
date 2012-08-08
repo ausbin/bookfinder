@@ -18,13 +18,17 @@ Licensed under the GPL2.
 installation
 ------------
 
-Pretty simple:
+If you're an Arch user, download the [PKGBUILD](https://raw.github.com/UncleNinja/bookfinder/master/PKGBUILD) to a directory of your choice and run `makepkg`. If you're looking for `python2-nbt`, you can find it in the [aur](https://aur.archlinux.org/packages.php?ID=59423).
+
+Otherwise:
+
+0. You'll need [python 2](http://python.org). 
+1. Make sure you have the python [nbt module](https://github.com/twoolie/nbt). If you don't follow the instructions in that link.
+2. Install bookfinder:
 
     $ git clone git://github.com/UncleNinja/bookfinder.git bookfinder
     $ cd bookfinder
     # install -Dm 755 bookfinder.py $pkgdir/usr/bin/bookfinder
-
-If you're an Arch user download the [PKGBUILD](https://raw.github.com/UncleNinja/bookfinder/master/PKGBUILD) to a directory of your choice and run `makepkg`. If you're looking for python2-nbt, you can find it in the [aur](https://aur.archlinux.org/packages.php?ID=59423).
 
 examples
 --------
@@ -57,9 +61,7 @@ help
 ----
 
     $ bookfinder --help
-    usage: bookfinder [-h] [-d OUTPUT_DIR] [-a] [-c] [-f] [-p] [-i] [-e] [-s]
-                         [-t]
-                         world
+    usage: bookfinder [-h] [-d OUTPUT_DIR] [-a] [-c] [-f] [-p] [-i] [-e] [-s] [-t] world
     
     converts books in an anvil world into specially formatted text files
     
@@ -68,7 +70,7 @@ help
     
     optional arguments:
       -h, --help            show this help message and exit
-      -d OUTPUT\_DIR, --output-dir OUTPUT\_DIR
+      -d OUTPUT_DIR, --output-dir OUTPUT_DIR
                             place to put book text files
       -a, --all             search for books everywhere
       -c, --chests          search chests for books (slow)
