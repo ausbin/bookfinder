@@ -26,9 +26,9 @@ Otherwise:
 1. Make sure you have the python [nbt module](https://github.com/twoolie/nbt). If you don't follow the instructions in that link.
 2. Install bookfinder:
 
-    $ git clone git://github.com/UncleNinja/bookfinder.git bookfinder
-    $ cd bookfinder
-    # install -Dm 755 bookfinder.py $pkgdir/usr/bin/bookfinder
+        $ git clone git://github.com/UncleNinja/bookfinder.git bookfinder
+        $ cd bookfinder
+        # install -Dm 755 bookfinder.py $pkgdir/usr/bin/bookfinder
 
 examples
 --------
