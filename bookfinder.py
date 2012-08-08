@@ -100,8 +100,18 @@ def scanentities (wf, furnaces=False, chests=False, traps=False, items=False, st
 def mktitle (word, titlechar) :
     return word + "\n" + (titlechar*len(word)) + "\n\n"
 
-def sanitizefilename (src) :
-    return re.sub(r"\W+", "", src.lower().replace(" ", "_")) or "book"
+def sanitizefilename (src, default="book") :
+    name = src.lower()
+
+    # hopefully these don't need to be compiled because of the regex cache
+    for replaceset in ((r"\s+", "-"), (r"[^-_a-z0-9]+", "")) :
+        name = re.sub(*replaceset, string=name)
+
+    # remove psuedo-whitespace from the ends of the string
+    name = name.strip("-")
+
+    # if the name is empty, just make the name "book"
+    return name or default 
 
 def argdir (directory) :
     if not os.path.isdir(directory) :
@@ -157,7 +167,13 @@ if __name__ == "__main__" :
             # create a sane file name
             newtitle = sanitizefilename(book.title)
 
-            name = os.path.join(args.output_dir, newtitle+".txt")
+            basename = os.path.join(args.output_dir, newtitle+".txt")
+            name = basename
+            attempt = 0
+
+            while os.path.isfile(name) :
+                attempt += 1
+                name = "%s.%s" % (basename, attempt)
 
             f = open(name, "w")
             # create book title
