@@ -18,7 +18,7 @@ Licensed under the GPL2.
 installation
 ------------
 
-If you're an Arch user, download the [PKGBUILD](https://raw.github.com/UncleNinja/bookfinder/master/PKGBUILD) to a directory of your choice and run `makepkg`. If you're looking for `python2-nbt`, you can find it in the [aur](https://aur.archlinux.org/packages.php?ID=59423).
+If you're an Arch user, download the [PKGBUILD](https://raw.github.com/ausbin/bookfinder/master/PKGBUILD) to a directory of your choice and run `makepkg`. If you're looking for `python2-nbt`, you can find it in the [aur](https://aur.archlinux.org/packages.php?ID=59423).
 
 Otherwise:
 
@@ -26,7 +26,7 @@ Otherwise:
 1. Make sure you have the python [nbt module](https://github.com/twoolie/nbt). If you don't follow the instructions in that link.
 2. Install bookfinder:
 
-        $ git clone git://github.com/UncleNinja/bookfinder.git bookfinder
+        $ git clone git://github.com/ausbin/bookfinder.git bookfinder
         $ cd bookfinder
         # install -Dm 755 bookfinder.py $pkgdir/usr/bin/bookfinder
 

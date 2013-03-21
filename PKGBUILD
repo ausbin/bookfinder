@@ -4,12 +4,12 @@ pkgver=bacon
 pkgrel=1
 pkgdesc="searches minecraft worlds for written books"
 arch=("any")
-url="https://github.com/uncleninja/bookfinder"
+url="https://github.com/ausbin/bookfinder"
 license=('GPL2')
 depends=("python2-nbt" "python2")
 makedepends=('git')
 
-_gitroot=git://github.com/UncleNinja/bookfinder.git
+_gitroot=git://github.com/ausbin/bookfinder.git
 _gitname=bookfinder
 
 build() {
